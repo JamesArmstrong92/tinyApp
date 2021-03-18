@@ -3,30 +3,22 @@
 <head>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <title>URL - TinyApp Example</title>
+  <title>TinyApp</title>
 </head>
-
 <body>
   <%- include('partials/_header') %>
   <div class="card text-center">
       <div class="card-header"></div>
       <div class="card-body">
         <h5 class="card-title">TinyURL for: <%= longURL %></h5>
-        <p class="card-text">Short URL: <a href="/u/<%= shortURL %>">
-          <%= shortURL %>
-        </a></p>
-        <a href="/urls/new">Create New URL</a>
-      </div>
-      <div>
-        
+        <p class="card-text">Short URL: <a href="/u/<%= shortURL %>"><%= shortURL %></a></p>
       </div>
     <div class="card-footer text-muted">
-      <div>
-    </div>
-      <form method="POST" action='/urls/<%= shortURL %>/edit'> New URL:
-        <input type='text' name='update'>
-        <button class="btn btn-secondary" value='submit' style="background-color: blue; border-color: blue; color: white;">Submit</button>
-      </form>
+      <form method="POST" action="/urls/<%= shortURL %>/edit">
+        <h4>Edit</h4>
+       <h5> New URL<input type='text' name='longURL' placeholder="http://"/> <button class="btn btn-secondary" style="background-color: green; border-color: black; color: black">Submit</button>
+       </h5>
+    </form>
     </div>
   </div>
   <!-- Bootstrap JS -->
